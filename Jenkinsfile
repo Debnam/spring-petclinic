@@ -1,3 +1,8 @@
+/*
+Nicolas Eliopoulos
+40059378
+COMP 345 - Assignment 6
+*/
 pipeline {
     agent any
     stages {
