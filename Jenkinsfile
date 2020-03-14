@@ -3,7 +3,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                bat './mvnw compile' 
+            }
+        }
+        stage('Test') {
+            steps {
+                bat './mvnw test' 
+            }
+        }
+        stage('Package') {
+            steps {
                 bat './mvnw package' 
+            }
+        }
+        stage('Deploy') {
+            when {
+                branch 'master'
+            }
+            steps {
+                bat './mvnw deploy' 
             }
         }
     }
